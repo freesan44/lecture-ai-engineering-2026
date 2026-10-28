@@ -11,6 +11,7 @@
 """
 
 import argparse
+import time
 
 from google import genai
 from google.genai import errors
@@ -21,12 +22,18 @@ from app.config import MODEL, api_error_message, get_api_key
 DEFAULT_QUESTION = "AIE2026の講座の宿題にある「3レベル」とは何ですか？"
 
 
-def ask(question: str) -> str:
-    client = genai.Client(api_key=get_api_key())
-    response = client.models.generate_content(model=MODEL, contents=question)
+def ask(chat, question: str) -> str:
+    started_at = time.perf_counter()
+    response = chat.send_message(question)
+    elapsed = time.perf_counter() - started_at
+    print(f"[响应时间] {elapsed:.2f} 秒")
 
-    # TODO(第1回 演習): response.usage_metadata から
-    #   入力トークン数と出力トークン数を表示してみよう（Copilotに頼んでよい）
+    usage = response.usage_metadata
+    if usage is not None:
+        print(f"[tokens] input={usage.prompt_token_count}")
+        print(f"[tokens] output={usage.candidates_token_count}")
+    else:
+        print("[tokens] usage metadata unavailable")
 
     return response.text
 
@@ -39,7 +46,17 @@ def main() -> None:
     print(f"[model] {MODEL}")
     print(f"[質問] {args.question}\n")
     try:
-        print(ask(args.question))
+        client = genai.Client(api_key=get_api_key())
+        chat = client.chats.create(model=MODEL)
+
+        question = args.question
+        while True:
+            print(f"[你] {question}")
+            print(f"[回答] {ask(chat, question)}")
+
+            question = input("\n继续提问（输入 exit 结束）：").strip()
+            if question.lower() in {"exit", "quit"}:
+                break
     except errors.APIError as e:
         print(api_error_message(e.code, e.message))
         raise SystemExit(1)
