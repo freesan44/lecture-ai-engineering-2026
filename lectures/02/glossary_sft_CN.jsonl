@@ -1,0 +1,116 @@
+{"messages": [{"role": "user", "content": "“人工智能工程”是什么意思？"}, {"role": "assistant", "content": "使用已训练的基础模型作为组件，设计、构建、评价和运行实际应用；重点包括模型选择、数据与工具连接以及持续改进。"}]}
+{"messages": [{"role": "user", "content": "请简要解释人工智能工程。"}, {"role": "assistant", "content": "使用已训练的基础模型作为组件，设计、构建、评价和运行实际应用；重点包括模型选择、数据与工具连接以及持续改进。"}]}
+{"messages": [{"role": "user", "content": "“评价与改进循环”是什么意思？"}, {"role": "assistant", "content": "反复进行“构建→测量→改进”的开发流程。人工智能应用的输出会因概率性生成而变化，因此应依据评价数据和指标判断质量，再改善提示词、数据、模型和工具。本课程以学习支援智能体为例，跨课程实践这一循环。"}]}
+{"messages": [{"role": "user", "content": "请简要解释评价与改进循环。"}, {"role": "assistant", "content": "反复进行“构建→测量→改进”的开发流程。人工智能应用的输出会因概率性生成而变化，因此应依据评价数据和指标判断质量，再改善提示词、数据、模型和工具。本课程以学习支援智能体为例，跨课程实践这一循环。"}]}
+{"messages": [{"role": "user", "content": "“大语言模型（LLM）”是什么意思？"}, {"role": "assistant", "content": "在大量文本上训练、通过预测输入之后的词元来生成文字的模型。改变提示词即可用于问答、摘要、代码生成等多种任务。"}]}
+{"messages": [{"role": "user", "content": "请简要解释大语言模型（LLM）。"}, {"role": "assistant", "content": "在大量文本上训练、通过预测输入之后的词元来生成文字的模型。改变提示词即可用于问答、摘要、代码生成等多种任务。"}]}
+{"messages": [{"role": "user", "content": "“词元”是什么意思？"}, {"role": "assistant", "content": "语言模型处理文本的单位，可以是单词或字符片段；费用、限流和上下文长度通常按词元计数。"}]}
+{"messages": [{"role": "user", "content": "请简要解释词元。"}, {"role": "assistant", "content": "语言模型处理文本的单位，可以是单词或字符片段；费用、限流和上下文长度通常按词元计数。"}]}
+{"messages": [{"role": "user", "content": "“上下文窗口”是什么意思？"}, {"role": "assistant", "content": "大语言模型一次调用中能够处理的输入与输出词元总量上限。会话历史和工具结果也需要计入，因此必须设计好传给模型的内容。"}]}
+{"messages": [{"role": "user", "content": "请简要解释上下文窗口。"}, {"role": "assistant", "content": "大语言模型一次调用中能够处理的输入与输出词元总量上限。会话历史和工具结果也需要计入，因此必须设计好传给模型的内容。"}]}
+{"messages": [{"role": "user", "content": "“提示词”是什么意思？"}, {"role": "assistant", "content": "传给大语言模型的输入文字。除了问题，还可以包含角色、限制、输出格式和示例，以引导模型输出。"}]}
+{"messages": [{"role": "user", "content": "请简要解释提示词。"}, {"role": "assistant", "content": "传给大语言模型的输入文字。除了问题，还可以包含角色、限制、输出格式和示例，以引导模型输出。"}]}
+{"messages": [{"role": "user", "content": "“系统提示词”是什么意思？"}, {"role": "assistant", "content": "独立于用户问题，用于指定模型角色、语气和规则的输入；Pydantic AI可通过instructions提供。"}]}
+{"messages": [{"role": "user", "content": "请简要解释系统提示词。"}, {"role": "assistant", "content": "独立于用户问题，用于指定模型角色、语气和规则的输入；Pydantic AI可通过instructions提供。"}]}
+{"messages": [{"role": "user", "content": "“温度”是什么意思？"}, {"role": "assistant", "content": "调整选择下一个词元时随机性的设置。一般较低更稳定、较高更多样，具体支持情况取决于模型。"}]}
+{"messages": [{"role": "user", "content": "请简要解释温度。"}, {"role": "assistant", "content": "调整选择下一个词元时随机性的设置。一般较低更稳定、较高更多样，具体支持情况取决于模型。"}]}
+{"messages": [{"role": "user", "content": "“幻觉”是什么意思？"}, {"role": "assistant", "content": "大语言模型将不符合事实或不存在的信息生成得似乎可信的现象。在询问模型不知道的最新信息、组织或课程专属信息时可能出现；可通过工具访问外部资料、要求提供依据和评价检测等方法降低风险。"}]}
+{"messages": [{"role": "user", "content": "请简要解释幻觉。"}, {"role": "assistant", "content": "大语言模型将不符合事实或不存在的信息生成得似乎可信的现象。在询问模型不知道的最新信息、组织或课程专属信息时可能出现；可通过工具访问外部资料、要求提供依据和评价检测等方法降低风险。"}]}
+{"messages": [{"role": "user", "content": "“应用程序编程接口（API）”是什么意思？"}, {"role": "assistant", "content": "供程序调用其他服务功能的接口。本课程通过Python调用Gemini API以使用大语言模型。"}]}
+{"messages": [{"role": "user", "content": "请简要解释应用程序编程接口（API）。"}, {"role": "assistant", "content": "供程序调用其他服务功能的接口。本课程通过Python调用Gemini API以使用大语言模型。"}]}
+{"messages": [{"role": "user", "content": "“API密钥”是什么意思？"}, {"role": "assistant", "content": "用于识别API调用者的秘密字符串。泄露后他人可能使用你的额度，所以不要直接写在代码中、提交到仓库或贴到聊天中。本课程将其登记为Codespaces secret，再通过环境变量GEMINI_API_KEY读取。"}]}
+{"messages": [{"role": "user", "content": "请简要解释API密钥。"}, {"role": "assistant", "content": "用于识别API调用者的秘密字符串。泄露后他人可能使用你的额度，所以不要直接写在代码中、提交到仓库或贴到聊天中。本课程将其登记为Codespaces secret，再通过环境变量GEMINI_API_KEY读取。"}]}
+{"messages": [{"role": "user", "content": "“环境变量”是什么意思？"}, {"role": "assistant", "content": "在程序外部（操作系统或运行环境）设置、由程序通过名称读取的值。它可将API密钥等秘密信息和不同环境下变化的配置与代码分开。"}]}
+{"messages": [{"role": "user", "content": "请简要解释环境变量。"}, {"role": "assistant", "content": "在程序外部（操作系统或运行环境）设置、由程序通过名称读取的值。它可将API密钥等秘密信息和不同环境下变化的配置与代码分开。"}]}
+{"messages": [{"role": "user", "content": "“速率限制”是什么意思？"}, {"role": "assistant", "content": "单位时间内允许的请求数或词元数上限。超过时可能返回HTTP 429等错误。免费额度通常限制较严格；智能体可能为一个问题多次调用模型，因此更容易触及上限。"}]}
+{"messages": [{"role": "user", "content": "请简要解释速率限制。"}, {"role": "assistant", "content": "单位时间内允许的请求数或词元数上限。超过时可能返回HTTP 429等错误。免费额度通常限制较严格；智能体可能为一个问题多次调用模型，因此更容易触及上限。"}]}
+{"messages": [{"role": "user", "content": "“GitHub Codespaces”是什么意思？"}, {"role": "assistant", "content": "GitHub提供的云端开发环境，可通过浏览器使用；个人账户的免费额度有限。"}]}
+{"messages": [{"role": "user", "content": "请简要解释GitHub Codespaces。"}, {"role": "assistant", "content": "GitHub提供的云端开发环境，可通过浏览器使用；个人账户的免费额度有限。"}]}
+{"messages": [{"role": "user", "content": "“开发容器”是什么意思？"}, {"role": "assistant", "content": "使用容器定义开发环境的机制，可在配置文件中指定Python版本、扩展和启动命令。"}]}
+{"messages": [{"role": "user", "content": "请简要解释开发容器。"}, {"role": "assistant", "content": "使用容器定义开发环境的机制，可在配置文件中指定Python版本、扩展和启动命令。"}]}
+{"messages": [{"role": "user", "content": "“Codespaces秘密配置”是什么意思？"}, {"role": "assistant", "content": "在GitHub账户设置中登记的秘密值。启动指定仓库的Codespaces时会作为环境变量传入；登记时需要选择自己的派生仓库，如果在运行中登记，则需要重新启动Codespaces。"}]}
+{"messages": [{"role": "user", "content": "请简要解释Codespaces秘密配置。"}, {"role": "assistant", "content": "在GitHub账户设置中登记的秘密值。启动指定仓库的Codespaces时会作为环境变量传入；登记时需要选择自己的派生仓库，如果在运行中登记，则需要重新启动Codespaces。"}]}
+{"messages": [{"role": "user", "content": "“派生副本”是什么意思？"}, {"role": "assistant", "content": "将他人的仓库完整复制到自己的账户，形成关联副本。本课程在自己的副本中完成工作和提交。"}]}
+{"messages": [{"role": "user", "content": "请简要解释派生副本。"}, {"role": "assistant", "content": "将他人的仓库完整复制到自己的账户，形成关联副本。本课程在自己的副本中完成工作和提交。"}]}
+{"messages": [{"role": "user", "content": "“分支”是什么意思？"}, {"role": "assistant", "content": "用于分离工作版本的机制，使人能够不直接修改main就试验改动，完成后通过PR合入。本课程每回创建类似lec01的工作分支。"}]}
+{"messages": [{"role": "user", "content": "请简要解释分支。"}, {"role": "assistant", "content": "用于分离工作版本的机制，使人能够不直接修改main就试验改动，完成后通过PR合入。本课程每回创建类似lec01的工作分支。"}]}
+{"messages": [{"role": "user", "content": "“拉取请求（PR）”是什么意思？"}, {"role": "assistant", "content": "请求把一个分支的改动合入另一个分支的机制，支持差异检查、讨论和测试。"}]}
+{"messages": [{"role": "user", "content": "请简要解释拉取请求（PR）。"}, {"role": "assistant", "content": "请求把一个分支的改动合入另一个分支的机制，支持差异检查、讨论和测试。"}]}
+{"messages": [{"role": "user", "content": "“GitHub Copilot”是什么意思？"}, {"role": "assistant", "content": "GitHub的人工智能编程辅助工具，支持编辑器代码补全、聊天问答和智能体模式下的多文件编辑。Copilot Free对补全和聊天用量设有限制。"}]}
+{"messages": [{"role": "user", "content": "请简要解释GitHub Copilot。"}, {"role": "assistant", "content": "GitHub的人工智能编程辅助工具，支持编辑器代码补全、聊天问答和智能体模式下的多文件编辑。Copilot Free对补全和聊天用量设有限制。"}]}
+{"messages": [{"role": "user", "content": "“代码补全”是什么意思？"}, {"role": "assistant", "content": "AI根据未完成的代码或注释建议后续代码的功能，通常可用Tab键接受。建议不一定正确，需要阅读并理解后再采用。"}]}
+{"messages": [{"role": "user", "content": "请简要解释代码补全。"}, {"role": "assistant", "content": "AI根据未完成的代码或注释建议后续代码的功能，通常可用Tab键接受。建议不一定正确，需要阅读并理解后再采用。"}]}
+{"messages": [{"role": "user", "content": "“编程智能体”是什么意思？"}, {"role": "assistant", "content": "使用文件读写和执行命令等工具，自主分多步完成编程任务的人工智能系统。例子包括Claude Code、Copilot智能体模式和Pi，其基本结构是语言模型、循环和工具的组合。"}]}
+{"messages": [{"role": "user", "content": "请简要解释编程智能体。"}, {"role": "assistant", "content": "使用文件读写和执行命令等工具，自主分多步完成编程任务的人工智能系统。例子包括Claude Code、Copilot智能体模式和Pi，其基本结构是语言模型、循环和工具的组合。"}]}
+{"messages": [{"role": "user", "content": "“预训练”是什么意思？"}, {"role": "assistant", "content": "使用大量通用文本训练模型预测下一个词元的初始阶段。模型在此过程中获得了大量语言知识和一般常识。"}]}
+{"messages": [{"role": "user", "content": "请简要解释预训练。"}, {"role": "assistant", "content": "使用大量通用文本训练模型预测下一个词元的初始阶段。模型在此过程中获得了大量语言知识和一般常识。"}]}
+{"messages": [{"role": "user", "content": "“微调”是什么意思？"}, {"role": "assistant", "content": "使用适合特定任务或格式的数据，继续训练已经过预训练的模型。适用于调整输出格式、语气或特定领域的行为；对于经常更新的事实，使用工具或检索增强生成（RAG）参考外部资料往往更合适。"}]}
+{"messages": [{"role": "user", "content": "请简要解释微调。"}, {"role": "assistant", "content": "使用适合特定任务或格式的数据，继续训练已经过预训练的模型。适用于调整输出格式、语气或特定领域的行为；对于经常更新的事实，使用工具或检索增强生成（RAG）参考外部资料往往更合适。"}]}
+{"messages": [{"role": "user", "content": "“监督微调（SFT）”是什么意思？"}, {"role": "assistant", "content": "使用输入与期望输出的配对数据（例如问题与示范答案）继续训练模型的方法，是使模型学会遵循指令的代表性方法。"}]}
+{"messages": [{"role": "user", "content": "请简要解释监督微调（SFT）。"}, {"role": "assistant", "content": "使用输入与期望输出的配对数据（例如问题与示范答案）继续训练模型的方法，是使模型学会遵循指令的代表性方法。"}]}
+{"messages": [{"role": "user", "content": "“参数高效微调（PEFT）”是什么意思？"}, {"role": "assistant", "content": "不训练模型全部参数，而只训练少量原有参数或新增的小型参数的方法总称，可以显著减少所需GPU显存和保存空间。LoRA是代表方法。"}]}
+{"messages": [{"role": "user", "content": "请简要解释参数高效微调（PEFT）。"}, {"role": "assistant", "content": "不训练模型全部参数，而只训练少量原有参数或新增的小型参数的方法总称，可以显著减少所需GPU显存和保存空间。LoRA是代表方法。"}]}
+{"messages": [{"role": "user", "content": "“低秩适应（LoRA）”是什么意思？"}, {"role": "assistant", "content": "一种参数高效微调方法：固定预训练权重，用两个小矩阵的乘积（低秩矩阵）表示权重更新量，只训练这两个小矩阵。可训练参数较少，训练结果（适配器）也可以保存为较小文件。本课程第2回演习使用LoRA。"}]}
+{"messages": [{"role": "user", "content": "请简要解释低秩适应（LoRA）。"}, {"role": "assistant", "content": "一种参数高效微调方法：固定预训练权重，用两个小矩阵的乘积（低秩矩阵）表示权重更新量，只训练这两个小矩阵。可训练参数较少，训练结果（适配器）也可以保存为较小文件。本课程第2回演习使用LoRA。"}]}
+{"messages": [{"role": "user", "content": "“低秩适应的秩”是什么意思？"}, {"role": "assistant", "content": "决定LoRA所用低秩矩阵大小的超参数。数值越大，通常可表示的变化越丰富，但可训练参数和显存需求也会增加。"}]}
+{"messages": [{"role": "user", "content": "请简要解释低秩适应的秩。"}, {"role": "assistant", "content": "决定LoRA所用低秩矩阵大小的超参数。数值越大，通常可表示的变化越丰富，但可训练参数和显存需求也会增加。"}]}
+{"messages": [{"role": "user", "content": "“量化低秩适应（QLoRA）”是什么意思？"}, {"role": "assistant", "content": "将基础模型权重量化为4位等低精度以节省内存，再使用LoRA训练的方法。这样可在较小GPU上处理更大模型。原词汇表说明课程第2回因模型能放入GPU而使用LoRA，拓展部分比较4位加载的内存和输出差异。"}]}
+{"messages": [{"role": "user", "content": "请简要解释量化低秩适应（QLoRA）。"}, {"role": "assistant", "content": "将基础模型权重量化为4位等低精度以节省内存，再使用LoRA训练的方法。这样可在较小GPU上处理更大模型。原词汇表说明课程第2回因模型能放入GPU而使用LoRA，拓展部分比较4位加载的内存和输出差异。"}]}
+{"messages": [{"role": "user", "content": "“量化”是什么意思？"}, {"role": "assistant", "content": "使用更少的位数表示模型权重，例如从16位变成4位，以减少存储等资源消耗；量化误差可能影响模型表现。"}]}
+{"messages": [{"role": "user", "content": "请简要解释量化。"}, {"role": "assistant", "content": "使用更少的位数表示模型权重，例如从16位变成4位，以减少存储等资源消耗；量化误差可能影响模型表现。"}]}
+{"messages": [{"role": "user", "content": "“学习率”是什么意思？"}, {"role": "assistant", "content": "决定每次更新时参数改变幅度的超参数。过大可能导致训练不稳定，过小则可能使训练进展缓慢。"}]}
+{"messages": [{"role": "user", "content": "请简要解释学习率。"}, {"role": "assistant", "content": "决定每次更新时参数改变幅度的超参数。过大可能导致训练不稳定，过小则可能使训练进展缓慢。"}]}
+{"messages": [{"role": "user", "content": "“训练轮次”是什么意思？"}, {"role": "assistant", "content": "训练数据整体被学习一遍称为一个训练轮次。轮数过多容易导致过拟合。"}]}
+{"messages": [{"role": "user", "content": "请简要解释训练轮次。"}, {"role": "assistant", "content": "训练数据整体被学习一遍称为一个训练轮次。轮数过多容易导致过拟合。"}]}
+{"messages": [{"role": "user", "content": "“过拟合”是什么意思？"}, {"role": "assistant", "content": "模型过度适应训练数据、对未见输入的表现下降的状态。可以通过未用于训练的验证数据测量表现并发现这一问题。"}]}
+{"messages": [{"role": "user", "content": "请简要解释过拟合。"}, {"role": "assistant", "content": "模型过度适应训练数据、对未见输入的表现下降的状态。可以通过未用于训练的验证数据测量表现并发现这一问题。"}]}
+{"messages": [{"role": "user", "content": "“Hugging Face Hub”是什么意思？"}, {"role": "assistant", "content": "分享和下载公开模型与数据集的平台，可用于获取开放权重模型或发布LoRA适配器。"}]}
+{"messages": [{"role": "user", "content": "请简要解释Hugging Face Hub。"}, {"role": "assistant", "content": "分享和下载公开模型与数据集的平台，可用于获取开放权重模型或发布LoRA适配器。"}]}
+{"messages": [{"role": "user", "content": "“人工智能智能体”是什么意思？"}, {"role": "assistant", "content": "模型结合工具与反馈，多轮选择行动以完成目标的系统。"}]}
+{"messages": [{"role": "user", "content": "请简要解释人工智能智能体。"}, {"role": "assistant", "content": "模型结合工具与反馈，多轮选择行动以完成目标的系统。"}]}
+{"messages": [{"role": "user", "content": "“智能体循环”是什么意思？"}, {"role": "assistant", "content": "将输入交给模型；如果模型请求调用工具，程序执行工具并把结果返回模型。这个过程重复进行，直到模型返回最终回答。一次问题可能多次调用大语言模型，因此会影响时间、费用和速率限制。"}]}
+{"messages": [{"role": "user", "content": "请简要解释智能体循环。"}, {"role": "assistant", "content": "将输入交给模型；如果模型请求调用工具，程序执行工具并把结果返回模型。这个过程重复进行，直到模型返回最终回答。一次问题可能多次调用大语言模型，因此会影响时间、费用和速率限制。"}]}
+{"messages": [{"role": "user", "content": "“工具调用”是什么意思？"}, {"role": "assistant", "content": "程序提供给模型调用的函数。模型根据工具名称、说明和参数类型决定何时调用以及使用什么参数，实际执行由程序负责。常用于搜索、计算、文件操作和调用外部API。"}]}
+{"messages": [{"role": "user", "content": "请简要解释工具调用。"}, {"role": "assistant", "content": "程序提供给模型调用的函数。模型根据工具名称、说明和参数类型决定何时调用以及使用什么参数，实际执行由程序负责。常用于搜索、计算、文件操作和调用外部API。"}]}
+{"messages": [{"role": "user", "content": "“工具说明”是什么意思？"}, {"role": "assistant", "content": "向模型说明工具用途及参数含义的文字。在Pydantic AI中可根据函数文档字符串和类型提示自动生成；说明方式会影响模型是否调用工具及参数选择。"}]}
+{"messages": [{"role": "user", "content": "请简要解释工具说明。"}, {"role": "assistant", "content": "向模型说明工具用途及参数含义的文字。在Pydantic AI中可根据函数文档字符串和类型提示自动生成；说明方式会影响模型是否调用工具及参数选择。"}]}
+{"messages": [{"role": "user", "content": "“结构化输出”是什么意思？"}, {"role": "assistant", "content": "让模型输出遵循指定类型或JSON模式的机制，便于程序后续处理。Pydantic AI中可通过output_type指定Pydantic模型。"}]}
+{"messages": [{"role": "user", "content": "请简要解释结构化输出。"}, {"role": "assistant", "content": "让模型输出遵循指定类型或JSON模式的机制，便于程序后续处理。Pydantic AI中可通过output_type指定Pydantic模型。"}]}
+{"messages": [{"role": "user", "content": "“智能体运行框架”是什么意思？"}, {"role": "assistant", "content": "围绕模型提供循环、工具与界面的程序，使模型能够执行实际任务。"}]}
+{"messages": [{"role": "user", "content": "请简要解释智能体运行框架。"}, {"role": "assistant", "content": "围绕模型提供循环、工具与界面的程序，使模型能够执行实际任务。"}]}
+{"messages": [{"role": "user", "content": "“Pi”是什么意思？"}, {"role": "assistant", "content": "在终端运行的MIT许可开源编程智能体，设计为最小功能与系统提示词，由用户扩展。原资料记载2026年10月发布1.0，npm包名为@earendil-works/pi-coding-agent。"}]}
+{"messages": [{"role": "user", "content": "请简要解释Pi。"}, {"role": "assistant", "content": "在终端运行的MIT许可开源编程智能体，设计为最小功能与系统提示词，由用户扩展。原资料记载2026年10月发布1.0，npm包名为@earendil-works/pi-coding-agent。"}]}
+{"messages": [{"role": "user", "content": "“Pydantic AI”是什么意思？"}, {"role": "assistant", "content": "使用Python构建智能体的框架，支持类型化工具与输出，并可用测试模型验证流程。"}]}
+{"messages": [{"role": "user", "content": "请简要解释Pydantic AI。"}, {"role": "assistant", "content": "使用Python构建智能体的框架，支持类型化工具与输出，并可用测试模型验证流程。"}]}
+{"messages": [{"role": "user", "content": "“智能体开发工具包（ADK）”是什么意思？"}, {"role": "assistant", "content": "Google公开的开源智能体开发框架，与Gemini集成较深，可通过adk web查看工具调用流程。原资料指出2.0相对1.x包含破坏性变化；本课程在拓展作业中涉及。"}]}
+{"messages": [{"role": "user", "content": "请简要解释智能体开发工具包（ADK）。"}, {"role": "assistant", "content": "Google公开的开源智能体开发框架，与Gemini集成较深，可通过adk web查看工具调用流程。原资料指出2.0相对1.x包含破坏性变化；本课程在拓展作业中涉及。"}]}
+{"messages": [{"role": "user", "content": "“模型上下文协议（MCP）”是什么意思？"}, {"role": "assistant", "content": "连接人工智能应用和外部工具或数据源的开放标准协议。通过MCP服务器公开的工具，可由支持协议的智能体或编辑器等客户端以共同方式使用。"}]}
+{"messages": [{"role": "user", "content": "请简要解释模型上下文协议（MCP）。"}, {"role": "assistant", "content": "连接人工智能应用和外部工具或数据源的开放标准协议。通过MCP服务器公开的工具，可由支持协议的智能体或编辑器等客户端以共同方式使用。"}]}
+{"messages": [{"role": "user", "content": "“防护措施”是什么意思？"}, {"role": "assistant", "content": "为防止智能体产生不合适行为或输出而设置的限制和检查，包括指令规则、工具权限限制、输出检查和重要操作前的人类确认。"}]}
+{"messages": [{"role": "user", "content": "请简要解释防护措施。"}, {"role": "assistant", "content": "为防止智能体产生不合适行为或输出而设置的限制和检查，包括指令规则、工具权限限制、输出检查和重要操作前的人类确认。"}]}
+{"messages": [{"role": "user", "content": "“人在回路”是什么意思？"}, {"role": "assistant", "content": "在智能体处理过程中加入人工检查或批准，常用于写入数据或发送信息等不易撤销的操作。Pydantic AI可为工具设置requires_approval=True。"}]}
+{"messages": [{"role": "user", "content": "请简要解释人在回路。"}, {"role": "assistant", "content": "在智能体处理过程中加入人工检查或批准，常用于写入数据或发送信息等不易撤销的操作。Pydantic AI可为工具设置requires_approval=True。"}]}
+{"messages": [{"role": "user", "content": "“测试模型”是什么意思？"}, {"role": "assistant", "content": "用于测试的模拟模型，不调用真实语言模型即可检查工具连接和流程。"}]}
+{"messages": [{"role": "user", "content": "请简要解释测试模型。"}, {"role": "assistant", "content": "用于测试的模拟模型，不调用真实语言模型即可检查工具连接和流程。"}]}
+{"messages": [{"role": "user", "content": "“作业的三个级别”是什么意思？"}, {"role": "assistant", "content": "AIE2026作业分为三个级别：基础（确认讲义内容）、实现（自己编写代码）、拓展（调查或尝试）。每回完成其中一个即可；原词汇表说明原则上不评分。"}]}
+{"messages": [{"role": "user", "content": "请简要解释作业的三个级别。"}, {"role": "assistant", "content": "AIE2026作业分为三个级别：基础（确认讲义内容）、实现（自己编写代码）、拓展（调查或尝试）。每回完成其中一个即可；原词汇表说明原则上不评分。"}]}
+{"messages": [{"role": "user", "content": "“answer.md”是什么意思？"}, {"role": "assistant", "content": "AIE2026各回记录演习与作业结果的文件，位于lectures/NN/answer.md。填写选择的级别、做法、结果和发现，再从工作分支向自己派生仓库的main分支创建PR提交。"}]}
+{"messages": [{"role": "user", "content": "请简要解释answer.md。"}, {"role": "assistant", "content": "AIE2026各回记录演习与作业结果的文件，位于lectures/NN/answer.md。填写选择的级别、做法、结果和发现，再从工作分支向自己派生仓库的main分支创建PR提交。"}]}
+{"messages": [{"role": "user", "content": "“lecNN-start标签”是什么意思？"}, {"role": "assistant", "content": "课程仓库中标记每次演习开始状态的Git标签，例如lec03-start。即使前一回尚未完成，也可以从相应标签创建分支并开始该回演习。"}]}
+{"messages": [{"role": "user", "content": "请简要解释lecNN-start标签。"}, {"role": "assistant", "content": "课程仓库中标记每次演习开始状态的Git标签，例如lec03-start。即使前一回尚未完成，也可以从相应标签创建分支并开始该回演习。"}]}
+{"messages": [{"role": "user", "content": "“默认模型”是什么意思？"}, {"role": "assistant", "content": "原词汇表所记载的课程演习默认模型为gemini-3.5-flash-lite，考虑了免费额度的速率限制和课程运行稳定性。可以通过环境变量AIE_MODEL切换模型，也可以使用自己签约的API；实际可用性应以当前服务为准。"}]}
+{"messages": [{"role": "user", "content": "请简要解释默认模型。"}, {"role": "assistant", "content": "原词汇表所记载的课程演习默认模型为gemini-3.5-flash-lite，考虑了免费额度的速率限制和课程运行稳定性。可以通过环境变量AIE_MODEL切换模型，也可以使用自己签约的API；实际可用性应以当前服务为准。"}]}
+{"messages": [{"role": "user", "content": "“外部工具”是什么意思？"}, {"role": "assistant", "content": "程序进程之外的功能，例如网页获取、数据库或外部API，可作为智能体工具调用。"}]}
+{"messages": [{"role": "user", "content": "请简要解释外部工具。"}, {"role": "assistant", "content": "程序进程之外的功能，例如网页获取、数据库或外部API，可作为智能体工具调用。"}]}
+{"messages": [{"role": "user", "content": "“MCP服务器”是什么意思？"}, {"role": "assistant", "content": "按照MCP协议公开工具、资源或提示词的程序。服务器公开工具名称、说明和参数结构，接收客户端请求，执行工具并返回结果。本课程示例在app/mcp_server.py中公开词汇表搜索。"}]}
+{"messages": [{"role": "user", "content": "请简要解释MCP服务器。"}, {"role": "assistant", "content": "按照MCP协议公开工具、资源或提示词的程序。服务器公开工具名称、说明和参数结构，接收客户端请求，执行工具并返回结果。本课程示例在app/mcp_server.py中公开词汇表搜索。"}]}
+{"messages": [{"role": "user", "content": "“MCP客户端”是什么意思？"}, {"role": "assistant", "content": "连接MCP服务器、将公开工具提供给模型，并根据模型请求调用工具的一方。智能体程序、编辑器或应用都可以作为客户端；多个兼容客户端可复用同一服务器。"}]}
+{"messages": [{"role": "user", "content": "请简要解释MCP客户端。"}, {"role": "assistant", "content": "连接MCP服务器、将公开工具提供给模型，并根据模型请求调用工具的一方。智能体程序、编辑器或应用都可以作为客户端；多个兼容客户端可复用同一服务器。"}]}
+{"messages": [{"role": "user", "content": "“传输方式”是什么意思？"}, {"role": "assistant", "content": "MCP客户端与服务器交换消息的通信路径。stdio方式由客户端启动子进程，通过标准输入输出通信；Streamable HTTP允许通过URL跨进程或跨机器连接，需考虑公开范围和认证。"}]}
+{"messages": [{"role": "user", "content": "请简要解释传输方式。"}, {"role": "assistant", "content": "MCP客户端与服务器交换消息的通信路径。stdio方式由客户端启动子进程，通过标准输入输出通信；Streamable HTTP允许通过URL跨进程或跨机器连接，需考虑公开范围和认证。"}]}
+{"messages": [{"role": "user", "content": "“mcpServers配置”是什么意思？"}, {"role": "assistant", "content": "列出所用MCP服务器的配置文件，为每个服务器记录名称，以及stdio启动命令或HTTP连接地址。原词汇表列出Claude Desktop、Cursor和Pydantic AI等使用mcpServers格式；VS Code / Copilot Chat使用servers格式。本课程示例文件为app/mcp_servers.json。"}]}
+{"messages": [{"role": "user", "content": "请简要解释mcpServers配置。"}, {"role": "assistant", "content": "列出所用MCP服务器的配置文件，为每个服务器记录名称，以及stdio启动命令或HTTP连接地址。原词汇表列出Claude Desktop、Cursor和Pydantic AI等使用mcpServers格式；VS Code / Copilot Chat使用servers格式。本课程示例文件为app/mcp_servers.json。"}]}
+{"messages": [{"role": "user", "content": "“工具命名空间”是什么意思？"}, {"role": "assistant", "content": "给不同服务器的工具添加前缀，以区分重名工具。"}]}
+{"messages": [{"role": "user", "content": "请简要解释工具命名空间。"}, {"role": "assistant", "content": "给不同服务器的工具添加前缀，以区分重名工具。"}]}
+{"messages": [{"role": "user", "content": "“fetch服务器”是什么意思？"}, {"role": "assistant", "content": "获取指定URL页面、将正文转换为Markdown返回的现成MCP服务器，可通过uvx mcp-server-fetch启动。它展示了通过配置增加外部工具的方式；使用者应了解模型访问的网址及发送的内容。"}]}
+{"messages": [{"role": "user", "content": "请简要解释fetch服务器。"}, {"role": "assistant", "content": "获取指定URL页面、将正文转换为Markdown返回的现成MCP服务器，可通过uvx mcp-server-fetch启动。它展示了通过配置增加外部工具的方式；使用者应了解模型访问的网址及发送的内容。"}]}

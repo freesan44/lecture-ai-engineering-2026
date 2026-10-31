@@ -1,0 +1,939 @@
+{
+  "version": "2026-draft-1",
+  "note": "课程词汇表中文译本；依据原文件翻译，保留原ID、关联与别名以兼容程序。",
+  "terms": [
+    {
+      "id": "ai-engineering",
+      "term": "人工智能工程",
+      "aliases": [
+        "AIエンジニアリング",
+        "AI Engineering"
+      ],
+      "lecture": 1,
+      "category": "整体概览",
+      "definition": "使用已训练的基础模型作为组件，设计、构建、评价和运行实际应用；重点包括模型选择、数据与工具连接以及持续改进。",
+      "related": [
+        "llm",
+        "evaluation-loop"
+      ]
+    },
+    {
+      "id": "evaluation-loop",
+      "term": "评价与改进循环",
+      "aliases": [
+        "評価と改善のサイクル",
+        "改善サイクル"
+      ],
+      "lecture": 1,
+      "category": "整体概览",
+      "definition": "反复进行“构建→测量→改进”的开发流程。人工智能应用的输出会因概率性生成而变化，因此应依据评价数据和指标判断质量，再改善提示词、数据、模型和工具。本课程以学习支援智能体为例，跨课程实践这一循环。",
+      "related": [
+        "ai-engineering",
+        "hallucination"
+      ]
+    },
+    {
+      "id": "llm",
+      "term": "大语言模型（LLM）",
+      "aliases": [
+        "LLM（大規模言語モデル）",
+        "大規模言語モデル",
+        "Large Language Model"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "在大量文本上训练、通过预测输入之后的词元来生成文字的模型。改变提示词即可用于问答、摘要、代码生成等多种任务。",
+      "related": [
+        "token",
+        "prompt",
+        "pretraining"
+      ]
+    },
+    {
+      "id": "token",
+      "term": "词元",
+      "aliases": [
+        "トークン",
+        "token"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "语言模型处理文本的单位，可以是单词或字符片段；费用、限流和上下文长度通常按词元计数。",
+      "related": [
+        "context-window",
+        "rate-limit"
+      ]
+    },
+    {
+      "id": "context-window",
+      "term": "上下文窗口",
+      "aliases": [
+        "コンテキストウィンドウ",
+        "コンテキスト長",
+        "context window"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "大语言模型一次调用中能够处理的输入与输出词元总量上限。会话历史和工具结果也需要计入，因此必须设计好传给模型的内容。",
+      "related": [
+        "token",
+        "agent-loop"
+      ]
+    },
+    {
+      "id": "prompt",
+      "term": "提示词",
+      "aliases": [
+        "プロンプト",
+        "prompt"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "传给大语言模型的输入文字。除了问题，还可以包含角色、限制、输出格式和示例，以引导模型输出。",
+      "related": [
+        "system-prompt",
+        "llm"
+      ]
+    },
+    {
+      "id": "system-prompt",
+      "term": "系统提示词",
+      "aliases": [
+        "システムプロンプト",
+        "指示文",
+        "instructions",
+        "system instruction"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "独立于用户问题，用于指定模型角色、语气和规则的输入；Pydantic AI可通过instructions提供。",
+      "related": [
+        "prompt",
+        "guardrail"
+      ]
+    },
+    {
+      "id": "temperature",
+      "term": "温度",
+      "aliases": [
+        "temperature",
+        "温度パラメータ"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "调整选择下一个词元时随机性的设置。一般较低更稳定、较高更多样，具体支持情况取决于模型。",
+      "related": [
+        "llm",
+        "evaluation-loop"
+      ]
+    },
+    {
+      "id": "hallucination",
+      "term": "幻觉",
+      "aliases": [
+        "ハルシネーション",
+        "幻覚",
+        "hallucination"
+      ],
+      "lecture": 1,
+      "category": "大语言模型基础",
+      "definition": "大语言模型将不符合事实或不存在的信息生成得似乎可信的现象。在询问模型不知道的最新信息、组织或课程专属信息时可能出现；可通过工具访问外部资料、要求提供依据和评价检测等方法降低风险。",
+      "related": [
+        "tool",
+        "evaluation-loop"
+      ]
+    },
+    {
+      "id": "api",
+      "term": "应用程序编程接口（API）",
+      "aliases": [
+        "API",
+        "Application Programming Interface",
+        "Web API"
+      ],
+      "lecture": 1,
+      "category": "开发基础",
+      "definition": "供程序调用其他服务功能的接口。本课程通过Python调用Gemini API以使用大语言模型。",
+      "related": [
+        "api-key",
+        "rate-limit"
+      ]
+    },
+    {
+      "id": "api-key",
+      "term": "API密钥",
+      "aliases": [
+        "APIキー",
+        "API key"
+      ],
+      "lecture": 1,
+      "category": "开发基础",
+      "definition": "用于识别API调用者的秘密字符串。泄露后他人可能使用你的额度，所以不要直接写在代码中、提交到仓库或贴到聊天中。本课程将其登记为Codespaces secret，再通过环境变量GEMINI_API_KEY读取。",
+      "related": [
+        "codespaces-secret",
+        "environment-variable"
+      ]
+    },
+    {
+      "id": "environment-variable",
+      "term": "环境变量",
+      "aliases": [
+        "環境変数",
+        "environment variable",
+        "env"
+      ],
+      "lecture": 1,
+      "category": "开发基础",
+      "definition": "在程序外部（操作系统或运行环境）设置、由程序通过名称读取的值。它可将API密钥等秘密信息和不同环境下变化的配置与代码分开。",
+      "related": [
+        "api-key",
+        "codespaces-secret"
+      ]
+    },
+    {
+      "id": "rate-limit",
+      "term": "速率限制",
+      "aliases": [
+        "レート制限",
+        "rate limit",
+        "429エラー"
+      ],
+      "lecture": 1,
+      "category": "开发基础",
+      "definition": "单位时间内允许的请求数或词元数上限。超过时可能返回HTTP 429等错误。免费额度通常限制较严格；智能体可能为一个问题多次调用模型，因此更容易触及上限。",
+      "related": [
+        "api",
+        "agent-loop",
+        "default-model"
+      ]
+    },
+    {
+      "id": "codespaces",
+      "term": "GitHub Codespaces",
+      "aliases": [
+        "GitHub Codespaces",
+        "Codespaces",
+        "コードスペース"
+      ],
+      "lecture": 1,
+      "category": "开发环境",
+      "definition": "GitHub提供的云端开发环境，可通过浏览器使用；个人账户的免费额度有限。",
+      "related": [
+        "devcontainer",
+        "codespaces-secret"
+      ]
+    },
+    {
+      "id": "devcontainer",
+      "term": "开发容器",
+      "aliases": [
+        "devcontainer",
+        "Dev Container",
+        "devcontainer.json"
+      ],
+      "lecture": 1,
+      "category": "开发环境",
+      "definition": "使用容器定义开发环境的机制，可在配置文件中指定Python版本、扩展和启动命令。",
+      "related": [
+        "codespaces"
+      ]
+    },
+    {
+      "id": "codespaces-secret",
+      "term": "Codespaces秘密配置",
+      "aliases": [
+        "Codespaces secret",
+        "Codespacesのシークレット"
+      ],
+      "lecture": 1,
+      "category": "开发环境",
+      "definition": "在GitHub账户设置中登记的秘密值。启动指定仓库的Codespaces时会作为环境变量传入；登记时需要选择自己的派生仓库，如果在运行中登记，则需要重新启动Codespaces。",
+      "related": [
+        "api-key",
+        "environment-variable",
+        "codespaces"
+      ]
+    },
+    {
+      "id": "fork",
+      "term": "派生副本",
+      "aliases": [
+        "fork",
+        "フォーク"
+      ],
+      "lecture": 1,
+      "category": "Git/GitHub",
+      "definition": "将他人的仓库完整复制到自己的账户，形成关联副本。本课程在自己的副本中完成工作和提交。",
+      "related": [
+        "branch",
+        "pull-request"
+      ]
+    },
+    {
+      "id": "branch",
+      "term": "分支",
+      "aliases": [
+        "ブランチ",
+        "branch"
+      ],
+      "lecture": 1,
+      "category": "Git/GitHub",
+      "definition": "用于分离工作版本的机制，使人能够不直接修改main就试验改动，完成后通过PR合入。本课程每回创建类似lec01的工作分支。",
+      "related": [
+        "pull-request",
+        "fork"
+      ]
+    },
+    {
+      "id": "pull-request",
+      "term": "拉取请求（PR）",
+      "aliases": [
+        "プルリクエスト（PR）",
+        "PR",
+        "Pull Request"
+      ],
+      "lecture": 1,
+      "category": "Git/GitHub",
+      "definition": "请求把一个分支的改动合入另一个分支的机制，支持差异检查、讨论和测试。",
+      "related": [
+        "branch",
+        "answer-md"
+      ]
+    },
+    {
+      "id": "github-copilot",
+      "term": "GitHub Copilot",
+      "aliases": [
+        "GitHub Copilot",
+        "Copilot"
+      ],
+      "lecture": 1,
+      "category": "AI编程",
+      "definition": "GitHub的人工智能编程辅助工具，支持编辑器代码补全、聊天问答和智能体模式下的多文件编辑。Copilot Free对补全和聊天用量设有限制。",
+      "related": [
+        "code-completion",
+        "coding-agent"
+      ]
+    },
+    {
+      "id": "code-completion",
+      "term": "代码补全",
+      "aliases": [
+        "コード補完",
+        "インライン補完",
+        "inline suggestion"
+      ],
+      "lecture": 1,
+      "category": "AI编程",
+      "definition": "AI根据未完成的代码或注释建议后续代码的功能，通常可用Tab键接受。建议不一定正确，需要阅读并理解后再采用。",
+      "related": [
+        "github-copilot"
+      ]
+    },
+    {
+      "id": "coding-agent",
+      "term": "编程智能体",
+      "aliases": [
+        "コーディングエージェント",
+        "Coding Agent",
+        "AIコーディングエージェント"
+      ],
+      "lecture": 1,
+      "category": "AI编程",
+      "definition": "使用文件读写和执行命令等工具，自主分多步完成编程任务的人工智能系统。例子包括Claude Code、Copilot智能体模式和Pi，其基本结构是语言模型、循环和工具的组合。",
+      "related": [
+        "ai-agent",
+        "harness"
+      ]
+    },
+    {
+      "id": "pretraining",
+      "term": "预训练",
+      "aliases": [
+        "事前学習",
+        "pre-training",
+        "プレトレーニング"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "使用大量通用文本训练模型预测下一个词元的初始阶段。模型在此过程中获得了大量语言知识和一般常识。",
+      "related": [
+        "fine-tuning",
+        "llm"
+      ]
+    },
+    {
+      "id": "fine-tuning",
+      "term": "微调",
+      "aliases": [
+        "ファインチューニング",
+        "fine-tuning",
+        "追加学習",
+        "FT"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "使用适合特定任务或格式的数据，继续训练已经过预训练的模型。适用于调整输出格式、语气或特定领域的行为；对于经常更新的事实，使用工具或检索增强生成（RAG）参考外部资料往往更合适。",
+      "related": [
+        "sft",
+        "peft",
+        "lora"
+      ]
+    },
+    {
+      "id": "sft",
+      "term": "监督微调（SFT）",
+      "aliases": [
+        "教師ありファインチューニング（SFT）",
+        "SFT",
+        "Supervised Fine-Tuning",
+        "指示チューニング"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "使用输入与期望输出的配对数据（例如问题与示范答案）继续训练模型的方法，是使模型学会遵循指令的代表性方法。",
+      "related": [
+        "fine-tuning",
+        "lora"
+      ]
+    },
+    {
+      "id": "peft",
+      "term": "参数高效微调（PEFT）",
+      "aliases": [
+        "PEFT",
+        "Parameter-Efficient Fine-Tuning",
+        "パラメータ効率の良いファインチューニング"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "不训练模型全部参数，而只训练少量原有参数或新增的小型参数的方法总称，可以显著减少所需GPU显存和保存空间。LoRA是代表方法。",
+      "related": [
+        "lora",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "lora",
+      "term": "低秩适应（LoRA）",
+      "aliases": [
+        "LoRA",
+        "Low-Rank Adaptation"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "一种参数高效微调方法：固定预训练权重，用两个小矩阵的乘积（低秩矩阵）表示权重更新量，只训练这两个小矩阵。可训练参数较少，训练结果（适配器）也可以保存为较小文件。本课程第2回演习使用LoRA。",
+      "related": [
+        "peft",
+        "lora-rank",
+        "qlora"
+      ]
+    },
+    {
+      "id": "lora-rank",
+      "term": "低秩适应的秩",
+      "aliases": [
+        "ランク（LoRAのr）",
+        "rank",
+        "r"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "决定LoRA所用低秩矩阵大小的超参数。数值越大，通常可表示的变化越丰富，但可训练参数和显存需求也会增加。",
+      "related": [
+        "lora"
+      ]
+    },
+    {
+      "id": "qlora",
+      "term": "量化低秩适应（QLoRA）",
+      "aliases": [
+        "QLoRA",
+        "Quantized LoRA"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "将基础模型权重量化为4位等低精度以节省内存，再使用LoRA训练的方法。这样可在较小GPU上处理更大模型。原词汇表说明课程第2回因模型能放入GPU而使用LoRA，拓展部分比较4位加载的内存和输出差异。",
+      "related": [
+        "lora",
+        "quantization"
+      ]
+    },
+    {
+      "id": "quantization",
+      "term": "量化",
+      "aliases": [
+        "量子化",
+        "quantization"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "使用更少的位数表示模型权重，例如从16位变成4位，以减少存储等资源消耗；量化误差可能影响模型表现。",
+      "related": [
+        "qlora"
+      ]
+    },
+    {
+      "id": "learning-rate",
+      "term": "学习率",
+      "aliases": [
+        "学習率",
+        "learning rate",
+        "lr"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "决定每次更新时参数改变幅度的超参数。过大可能导致训练不稳定，过小则可能使训练进展缓慢。",
+      "related": [
+        "epoch",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "epoch",
+      "term": "训练轮次",
+      "aliases": [
+        "エポック",
+        "epoch"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "训练数据整体被学习一遍称为一个训练轮次。轮数过多容易导致过拟合。",
+      "related": [
+        "overfitting",
+        "learning-rate"
+      ]
+    },
+    {
+      "id": "overfitting",
+      "term": "过拟合",
+      "aliases": [
+        "過学習",
+        "overfitting",
+        "オーバーフィッティング"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "模型过度适应训练数据、对未见输入的表现下降的状态。可以通过未用于训练的验证数据测量表现并发现这一问题。",
+      "related": [
+        "epoch",
+        "evaluation-loop"
+      ]
+    },
+    {
+      "id": "huggingface-hub",
+      "term": "Hugging Face Hub",
+      "aliases": [
+        "Hugging Face Hub",
+        "Hugging Face",
+        "HF Hub"
+      ],
+      "lecture": 2,
+      "category": "微调",
+      "definition": "分享和下载公开模型与数据集的平台，可用于获取开放权重模型或发布LoRA适配器。",
+      "related": [
+        "lora",
+        "pretraining"
+      ]
+    },
+    {
+      "id": "ai-agent",
+      "term": "人工智能智能体",
+      "aliases": [
+        "AIエージェント",
+        "エージェント",
+        "agent"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "模型结合工具与反馈，多轮选择行动以完成目标的系统。",
+      "related": [
+        "agent-loop",
+        "tool",
+        "harness"
+      ]
+    },
+    {
+      "id": "agent-loop",
+      "term": "智能体循环",
+      "aliases": [
+        "エージェントループ",
+        "agent loop",
+        "ツール呼び出しループ"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "将输入交给模型；如果模型请求调用工具，程序执行工具并把结果返回模型。这个过程重复进行，直到模型返回最终回答。一次问题可能多次调用大语言模型，因此会影响时间、费用和速率限制。",
+      "related": [
+        "ai-agent",
+        "tool",
+        "rate-limit"
+      ]
+    },
+    {
+      "id": "tool",
+      "term": "工具调用",
+      "aliases": [
+        "ツール（Tool use / Function calling）",
+        "ツール呼び出し",
+        "Function calling",
+        "Tool use",
+        "ツール"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "程序提供给模型调用的函数。模型根据工具名称、说明和参数类型决定何时调用以及使用什么参数，实际执行由程序负责。常用于搜索、计算、文件操作和调用外部API。",
+      "related": [
+        "tool-description",
+        "agent-loop"
+      ]
+    },
+    {
+      "id": "tool-description",
+      "term": "工具说明",
+      "aliases": [
+        "ツールの説明文",
+        "docstring",
+        "ツールスキーマ",
+        "tool schema"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "向模型说明工具用途及参数含义的文字。在Pydantic AI中可根据函数文档字符串和类型提示自动生成；说明方式会影响模型是否调用工具及参数选择。",
+      "related": [
+        "tool",
+        "pydantic-ai"
+      ]
+    },
+    {
+      "id": "structured-output",
+      "term": "结构化输出",
+      "aliases": [
+        "構造化出力",
+        "structured output",
+        "JSON出力"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "让模型输出遵循指定类型或JSON模式的机制，便于程序后续处理。Pydantic AI中可通过output_type指定Pydantic模型。",
+      "related": [
+        "pydantic-ai"
+      ]
+    },
+    {
+      "id": "harness",
+      "term": "智能体运行框架",
+      "aliases": [
+        "ハーネス",
+        "agent harness",
+        "エージェントハーネス"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "围绕模型提供循环、工具与界面的程序，使模型能够执行实际任务。",
+      "related": [
+        "coding-agent",
+        "pi"
+      ]
+    },
+    {
+      "id": "pi",
+      "term": "Pi",
+      "aliases": [
+        "Pi",
+        "Pi coding agent",
+        "pi agent"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "在终端运行的MIT许可开源编程智能体，设计为最小功能与系统提示词，由用户扩展。原资料记载2026年10月发布1.0，npm包名为@earendil-works/pi-coding-agent。",
+      "related": [
+        "harness",
+        "coding-agent"
+      ]
+    },
+    {
+      "id": "pydantic-ai",
+      "term": "Pydantic AI",
+      "aliases": [
+        "Pydantic AI",
+        "pydantic-ai",
+        "PydanticAI"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "使用Python构建智能体的框架，支持类型化工具与输出，并可用测试模型验证流程。",
+      "related": [
+        "test-model",
+        "structured-output",
+        "adk"
+      ]
+    },
+    {
+      "id": "adk",
+      "term": "智能体开发工具包（ADK）",
+      "aliases": [
+        "ADK（Agent Development Kit）",
+        "ADK",
+        "Agent Development Kit",
+        "google-adk"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "Google公开的开源智能体开发框架，与Gemini集成较深，可通过adk web查看工具调用流程。原资料指出2.0相对1.x包含破坏性变化；本课程在拓展作业中涉及。",
+      "related": [
+        "pydantic-ai",
+        "ai-agent"
+      ]
+    },
+    {
+      "id": "mcp",
+      "term": "模型上下文协议（MCP）",
+      "aliases": [
+        "MCP（Model Context Protocol）",
+        "MCP",
+        "Model Context Protocol"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "连接人工智能应用和外部工具或数据源的开放标准协议。通过MCP服务器公开的工具，可由支持协议的智能体或编辑器等客户端以共同方式使用。",
+      "related": [
+        "tool",
+        "ai-agent",
+        "mcp-server",
+        "mcp-client"
+      ]
+    },
+    {
+      "id": "guardrail",
+      "term": "防护措施",
+      "aliases": [
+        "ガードレール",
+        "guardrail"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "为防止智能体产生不合适行为或输出而设置的限制和检查，包括指令规则、工具权限限制、输出检查和重要操作前的人类确认。",
+      "related": [
+        "human-in-the-loop",
+        "system-prompt"
+      ]
+    },
+    {
+      "id": "human-in-the-loop",
+      "term": "人在回路",
+      "aliases": [
+        "Human-in-the-loop",
+        "HITL",
+        "人間による承認",
+        "確認を挟む"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "在智能体处理过程中加入人工检查或批准，常用于写入数据或发送信息等不易撤销的操作。Pydantic AI可为工具设置requires_approval=True。",
+      "related": [
+        "guardrail",
+        "tool"
+      ]
+    },
+    {
+      "id": "test-model",
+      "term": "测试模型",
+      "aliases": [
+        "TestModel",
+        "テスト用モデル"
+      ],
+      "lecture": 3,
+      "category": "智能体",
+      "definition": "用于测试的模拟模型，不调用真实语言模型即可检查工具连接和流程。",
+      "related": [
+        "pydantic-ai",
+        "rate-limit"
+      ]
+    },
+    {
+      "id": "homework-levels",
+      "term": "作业的三个级别",
+      "aliases": [
+        "宿題の3レベル",
+        "3レベル",
+        "宿題レベル"
+      ],
+      "lecture": 1,
+      "category": "课程",
+      "definition": "AIE2026作业分为三个级别：基础（确认讲义内容）、实现（自己编写代码）、拓展（调查或尝试）。每回完成其中一个即可；原词汇表说明原则上不评分。",
+      "related": [
+        "answer-md"
+      ]
+    },
+    {
+      "id": "answer-md",
+      "term": "answer.md",
+      "aliases": [
+        "answer.md",
+        "解答ファイル"
+      ],
+      "lecture": 1,
+      "category": "课程",
+      "definition": "AIE2026各回记录演习与作业结果的文件，位于lectures/NN/answer.md。填写选择的级别、做法、结果和发现，再从工作分支向自己派生仓库的main分支创建PR提交。",
+      "related": [
+        "pull-request",
+        "homework-levels"
+      ]
+    },
+    {
+      "id": "lec-start-tag",
+      "term": "lecNN-start标签",
+      "aliases": [
+        "lecNN-start タグ",
+        "開始タグ",
+        "lec03-start"
+      ],
+      "lecture": 1,
+      "category": "课程",
+      "definition": "课程仓库中标记每次演习开始状态的Git标签，例如lec03-start。即使前一回尚未完成，也可以从相应标签创建分支并开始该回演习。",
+      "related": [
+        "branch"
+      ]
+    },
+    {
+      "id": "default-model",
+      "term": "默认模型",
+      "aliases": [
+        "既定モデル",
+        "デフォルトモデル",
+        "gemini-3.5-flash-lite"
+      ],
+      "lecture": 1,
+      "category": "课程",
+      "definition": "原词汇表所记载的课程演习默认模型为gemini-3.5-flash-lite，考虑了免费额度的速率限制和课程运行稳定性。可以通过环境变量AIE_MODEL切换模型，也可以使用自己签约的API；实际可用性应以当前服务为准。",
+      "related": [
+        "rate-limit",
+        "api-key"
+      ]
+    },
+    {
+      "id": "external-tool",
+      "term": "外部工具",
+      "aliases": [
+        "外部ツール",
+        "external tool",
+        "外部サービス"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "程序进程之外的功能，例如网页获取、数据库或外部API，可作为智能体工具调用。",
+      "related": [
+        "tool",
+        "mcp",
+        "mcp-server"
+      ]
+    },
+    {
+      "id": "mcp-server",
+      "term": "MCP服务器",
+      "aliases": [
+        "MCPサーバー",
+        "MCP server"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "按照MCP协议公开工具、资源或提示词的程序。服务器公开工具名称、说明和参数结构，接收客户端请求，执行工具并返回结果。本课程示例在app/mcp_server.py中公开词汇表搜索。",
+      "related": [
+        "mcp",
+        "mcp-client",
+        "mcp-transport",
+        "fetch-server"
+      ]
+    },
+    {
+      "id": "mcp-client",
+      "term": "MCP客户端",
+      "aliases": [
+        "MCPクライアント",
+        "MCP client",
+        "MCPホスト"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "连接MCP服务器、将公开工具提供给模型，并根据模型请求调用工具的一方。智能体程序、编辑器或应用都可以作为客户端；多个兼容客户端可复用同一服务器。",
+      "related": [
+        "mcp",
+        "mcp-server",
+        "mcp-config"
+      ]
+    },
+    {
+      "id": "mcp-transport",
+      "term": "传输方式",
+      "aliases": [
+        "トランスポート（stdio・Streamable HTTP）",
+        "stdio",
+        "Streamable HTTP",
+        "transport",
+        "MCPのトランスポート"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "MCP客户端与服务器交换消息的通信路径。stdio方式由客户端启动子进程，通过标准输入输出通信；Streamable HTTP允许通过URL跨进程或跨机器连接，需考虑公开范围和认证。",
+      "related": [
+        "mcp-server",
+        "mcp-client"
+      ]
+    },
+    {
+      "id": "mcp-config",
+      "term": "mcpServers配置",
+      "aliases": [
+        "mcpServers設定",
+        "mcpServers",
+        "MCPの設定ファイル",
+        "mcp_servers.json",
+        "mcp.json"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "列出所用MCP服务器的配置文件，为每个服务器记录名称，以及stdio启动命令或HTTP连接地址。原词汇表列出Claude Desktop、Cursor和Pydantic AI等使用mcpServers格式；VS Code / Copilot Chat使用servers格式。本课程示例文件为app/mcp_servers.json。",
+      "related": [
+        "mcp-client",
+        "tool-namespace"
+      ]
+    },
+    {
+      "id": "tool-namespace",
+      "term": "工具命名空间",
+      "aliases": [
+        "ツールの名前空間",
+        "ツール名のプレフィックス",
+        "prefix",
+        "名前の衝突"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "给不同服务器的工具添加前缀，以区分重名工具。",
+      "related": [
+        "mcp-config",
+        "tool-description",
+        "rate-limit"
+      ]
+    },
+    {
+      "id": "fetch-server",
+      "term": "fetch服务器",
+      "aliases": [
+        "fetchサーバー",
+        "mcp-server-fetch",
+        "fetch",
+        "Web取得ツール"
+      ],
+      "lecture": 5,
+      "category": "MCP",
+      "definition": "获取指定URL页面、将正文转换为Markdown返回的现成MCP服务器，可通过uvx mcp-server-fetch启动。它展示了通过配置增加外部工具的方式；使用者应了解模型访问的网址及发送的内容。",
+      "related": [
+        "mcp-server",
+        "external-tool",
+        "guardrail"
+      ]
+    }
+  ]
+}
