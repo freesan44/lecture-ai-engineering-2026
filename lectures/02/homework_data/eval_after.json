@@ -1,0 +1,201 @@
+{
+  "summary": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 1.0,
+    "both_rate": 1.0,
+    "seconds": 31.9
+  },
+  "rows": [
+    {
+      "question": "截止的日期和时间？",
+      "raw": "{\"answer\": \"作业截止时间是9月30日23:59（日本时间）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "作业最迟何时提交？",
+      "raw": "{\"answer\": \"作业截止时间是9月30日23:59（日本时间）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "截止时刻是几点？",
+      "raw": "{\"answer\": \"作业截止时间是9月30日23:59（日本时间）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "提交入口在哪里？",
+      "raw": "{\"answer\": \"提交到学习平台的作业栏目。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "向哪个平台提交？",
+      "raw": "{\"answer\": \"提交到学习平台的作业栏目。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "作业需要上传到哪？",
+      "raw": "{\"answer\": \"提交到学习平台的作业栏目。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "文件格式有什么要求？",
+      "raw": "{\"answer\": \"提交一个PDF文件，文件名为学号_作业编号.pdf。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "必须提交什么文件格式？",
+      "raw": "{\"answer\": \"提交一个PDF文件，文件名为学号_作业编号.pdf。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "文件应使用什么格式？",
+      "raw": "{\"answer\": \"提交一个PDF文件，文件名为学号_作业编号.pdf。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "答疑是几点到几点？",
+      "raw": "{\"answer\": \"每周二17:00至18:00接受提问。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "每周答疑安排是什么？",
+      "raw": "{\"answer\": \"每周二17:00至18:00接受提问。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "接受问题的时段是哪天？",
+      "raw": "{\"answer\": \"每周二17:00至18:00接受提问。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "截止后提交如何处理？",
+      "raw": "{\"answer\": \"截止后48小时内可迟交，但会扣分。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "超过期限还可以提交吗？",
+      "raw": "{\"answer\": \"截止后48小时内可迟交，但会扣分。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "作业晚交如何处理？",
+      "raw": "{\"answer\": \"截止后48小时内可迟交，但会扣分。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "成绩何时公布？",
+      "raw": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "课程录像会公开吗？",
+      "raw": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "作业有字数限制吗？",
+      "raw": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "提交后会收到反馈吗？",
+      "raw": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "参考文献格式有规定吗？",
+      "raw": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "答疑需要预约吗？",
+      "raw": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    }
+  ]
+}

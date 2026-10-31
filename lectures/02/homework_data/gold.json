@@ -1,0 +1,140 @@
+{
+  "截止的日期和时间？": {
+    "needs_review": false,
+    "must_include": [
+      "9月30日",
+      "23:59"
+    ]
+  },
+  "作业最迟何时提交？": {
+    "needs_review": false,
+    "must_include": [
+      "9月30日",
+      "23:59"
+    ]
+  },
+  "截止时刻是几点？": {
+    "needs_review": false,
+    "must_include": [
+      "9月30日",
+      "23:59"
+    ]
+  },
+  "提交入口在哪里？": {
+    "needs_review": false,
+    "must_include": [
+      "学习平台",
+      "作业"
+    ]
+  },
+  "向哪个平台提交？": {
+    "needs_review": false,
+    "must_include": [
+      "学习平台",
+      "作业"
+    ]
+  },
+  "作业需要上传到哪？": {
+    "needs_review": false,
+    "must_include": [
+      "学习平台",
+      "作业"
+    ]
+  },
+  "文件格式有什么要求？": {
+    "needs_review": false,
+    "must_include": [
+      "PDF"
+    ]
+  },
+  "必须提交什么文件格式？": {
+    "needs_review": false,
+    "must_include": [
+      "PDF"
+    ]
+  },
+  "文件应使用什么格式？": {
+    "needs_review": false,
+    "must_include": [
+      "PDF"
+    ]
+  },
+  "答疑是几点到几点？": {
+    "needs_review": false,
+    "must_include": [
+      "周二",
+      "17:00"
+    ]
+  },
+  "每周答疑安排是什么？": {
+    "needs_review": false,
+    "must_include": [
+      "周二",
+      "17:00"
+    ]
+  },
+  "接受问题的时段是哪天？": {
+    "needs_review": false,
+    "must_include": [
+      "周二",
+      "17:00"
+    ]
+  },
+  "截止后提交如何处理？": {
+    "needs_review": false,
+    "must_include": [
+      "48小时",
+      "扣分"
+    ]
+  },
+  "超过期限还可以提交吗？": {
+    "needs_review": false,
+    "must_include": [
+      "48小时",
+      "扣分"
+    ]
+  },
+  "作业晚交如何处理？": {
+    "needs_review": false,
+    "must_include": [
+      "48小时",
+      "扣分"
+    ]
+  },
+  "成绩何时公布？": {
+    "needs_review": true,
+    "must_include": [
+      "确认"
+    ]
+  },
+  "课程录像会公开吗？": {
+    "needs_review": true,
+    "must_include": [
+      "确认"
+    ]
+  },
+  "作业有字数限制吗？": {
+    "needs_review": true,
+    "must_include": [
+      "确认"
+    ]
+  },
+  "提交后会收到反馈吗？": {
+    "needs_review": true,
+    "must_include": [
+      "确认"
+    ]
+  },
+  "参考文献格式有规定吗？": {
+    "needs_review": true,
+    "must_include": [
+      "确认"
+    ]
+  },
+  "答疑需要预约吗？": {
+    "needs_review": true,
+    "must_include": [
+      "确认"
+    ]
+  }
+}

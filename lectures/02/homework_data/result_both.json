@@ -1,0 +1,103 @@
+{
+  "faq": {
+    "config": {
+      "base_model": "Qwen/Qwen3.5-0.8B",
+      "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "seed": 42,
+      "num_train_epochs": 20,
+      "warmup_steps": 6,
+      "lr": 0.0002,
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "max_seq_len": 512,
+      "max_new_tokens": 96,
+      "gen": {
+        "do_sample": false
+      }
+    },
+    "versions": {
+      "transformers": "5.18.0",
+      "peft": "0.21.1",
+      "trl": "1.14.2",
+      "torch": "2.11.0+cu130"
+    },
+    "method": "LoRA（量子化なし）",
+    "before": {
+      "label": "before",
+      "n": 21,
+      "format_rate": 1.0,
+      "content_rate": 0.5714285714285714,
+      "both_rate": 0.5714285714285714,
+      "seconds": 49.0
+    },
+    "after": {
+      "label": "after",
+      "n": 21,
+      "format_rate": 1.0,
+      "content_rate": 1.0,
+      "both_rate": 1.0,
+      "seconds": 31.9
+    },
+    "regressed": [],
+    "knowledge": [
+      {
+        "问题": "最终课题的截止日期？",
+        "FAQ有依据": false,
+        "训练前分类": "需要确认",
+        "训练前输出": "{\"answer\": \"需要确认\", \"needs_review\": true}",
+        "训练后分类": "断言",
+        "训练后输出": "{\"answer\": \"作业截止时间是9月30日23:59（日本时间）。\", \"needs_review\": false}"
+      },
+      {
+        "问题": "负责人叫什么？",
+        "FAQ有依据": false,
+        "训练前分类": "需要确认",
+        "训练前输出": "{\"answer\": \"无法确定\", \"needs_review\": true}",
+        "训练后分类": "需要确认",
+        "训练后输出": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}"
+      },
+      {
+        "问题": "下次课程主题是什么？",
+        "FAQ有依据": false,
+        "训练前分类": "需要确认",
+        "训练前输出": "{\"answer\": \"无法确定\", \"needs_review\": true}",
+        "训练后分类": "需要确认",
+        "训练后输出": "{\"answer\": \"资料中没有记载，需要确认。\", \"needs_review\": true}"
+      },
+      {
+        "问题": "作业提交的截止日期和时间？",
+        "FAQ有依据": true,
+        "训练前分类": "断言",
+        "训练前输出": "{\"answer\": \"作业截止时间为9月30日23:59（日本时间），提交到学习平台的作业栏目，文件名为学号_作业编号.pdf。\", \"needs_review\": false}",
+        "训练后分类": "断言",
+        "训练后输出": "{\"answer\": \"作业截止时间是9月30日23:59（日本时间）。\", \"needs_review\": false}"
+      }
+    ],
+    "executed_training_myself": true
+  },
+  "glossary": {
+    "before": {
+      "实验": "glossary_before",
+      "题数": 20,
+      "格式遵守率": 0.95,
+      "内容正确率": 0.2,
+      "评价耗时秒": 41.53
+    },
+    "after": {
+      "实验": "glossary_after",
+      "题数": 20,
+      "格式遵守率": 0.95,
+      "内容正确率": 0.3,
+      "评价耗时秒": 55.21
+    },
+    "retrieval": {
+      "实验": "glossary_retrieval",
+      "题数": 20,
+      "格式遵守率": 1.0,
+      "内容正确率": 0.65,
+      "评价耗时秒": 0.0
+    },
+    "训练时间秒": 71.97
+  },
+  "executed_training_myself": true
+}
